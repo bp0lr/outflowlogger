@@ -40,7 +40,7 @@ cd outflowlogger
 npm install
 ```
 
-4. Add your .env to configs/local/.env whith you gRpc URL
+4. Rename configs/local/.env.example to configs/local/.env and add your gRPC URL.
 
 `.env` file
 ```sh
@@ -52,8 +52,6 @@ GRPC_END_POINT="http://grpcserver:10000"
 ```sh
 npm run dev
 ```
-
-# Version 1.0,   29/1/2025
 
 ## Contact me
 - [Telegram](https://t.me/@Bp1lr)
