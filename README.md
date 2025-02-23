@@ -1,7 +1,7 @@
 # outflowlogger
 
 Real-Time SOL Outflow Tracker via gRPC
-This program listens to the outflow of SOL transactions from a specific address (default case is Binance) using gRPC. 
+This program listens to the outflow of SOL transactions from a specific address (default case is raydium) using gRPC. 
 The received data is processed and displayed in real-time.
 
 ## Disclaimer
@@ -12,7 +12,7 @@ If you want to use this tool in a real-world scenario, you will need to modify, 
 Use this project at your own risk, and always verify the accuracy of the data before making any financial decisions. 🚀
 
 ## Use Case
-This tool is particularly useful for real-time monitoring, allowing users to track large SOL movements from Binance. It can be leveraged for strategies such as copy trading or liquidity analysis.
+This tool is particularly useful for real-time monitoring, allowing users to track large SOL movements from raydium. It can be leveraged for strategies such as copy trading or liquidity analysis.
 
 ## Prerequisites
 
