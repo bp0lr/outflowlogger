@@ -22,12 +22,40 @@ loadEnvFilesFromDir(CONFIG_DIR, workingMode);
 
 interface ENV {
   GRPC_END_POINT: string | undefined;
-  BinanceHotWalletAddress: string | undefined;
+  solanatrackerAPIKey: string | undefined;
+  solanatrackerUseFreePlan: boolean | undefined;
+  SOL_THRESHOLD: number | undefined;
+  WSOL_THRESHOLD: number | undefined;
+  FARMING_TIME_THRESHOLD: number | undefined;
+  FARMING_RATIO_THRESHOLD: number | undefined;
+  WINRATE_LOWER_THRESHOLD: number | undefined;
+  WINRATE_UPPER_THRESHOLD: number | undefined;
+  REALIZED_GAINS_THRESHOLD: number | undefined;
+  TOTAL_TOKENS_MIN: number | undefined;
+  ROI_MIN_THRESHOLD: number | undefined;
+  ROI_7D_NONZERO: boolean | undefined;
+  UNREALIZED_MIN_PERCENT: number | undefined;
+  UNREALIZED_MAX_PERCENT: number | undefined;
+  UNREALIZED_TO_REALIZED_RATIO: number | undefined;
 }
 
 interface Config {
   GRPC_END_POINT: string;
-  BinanceHotWalletAddress: string;
+  solanatrackerAPIKey: string;
+  solanatrackerUseFreePlan: boolean;
+  SOL_THRESHOLD: number;
+  WSOL_THRESHOLD: number;
+  FARMING_TIME_THRESHOLD: number;
+  FARMING_RATIO_THRESHOLD: number;
+  WINRATE_LOWER_THRESHOLD: number;
+  WINRATE_UPPER_THRESHOLD: number;
+  REALIZED_GAINS_THRESHOLD: number;
+  TOTAL_TOKENS_MIN: number;
+  ROI_MIN_THRESHOLD: number;
+  ROI_7D_NONZERO: boolean;
+  UNREALIZED_MIN_PERCENT: number;
+  UNREALIZED_MAX_PERCENT: number;
+  UNREALIZED_TO_REALIZED_RATIO: number;
 }
 
 const parseEnv = <T>(key: string, parser: (value: string) => T, required = true): T => {
@@ -51,7 +79,21 @@ const parseEnv = <T>(key: string, parser: (value: string) => T, required = true)
 const getConfig = (): Config => {
   return {
     GRPC_END_POINT: parseEnv("GRPC_END_POINT", String),
-    BinanceHotWalletAddress: parseEnv("BinanceHotWalletAddress", String),
+    solanatrackerAPIKey: parseEnv("solanatrackerAPIKey", String),
+    solanatrackerUseFreePlan: parseEnv("solanatrackerUseFreePlan", (value) => value === "true"),
+    SOL_THRESHOLD: parseEnv("SOL_THRESHOLD", Number),
+    WSOL_THRESHOLD: parseEnv("WSOL_THRESHOLD", Number),
+    FARMING_TIME_THRESHOLD: parseEnv("FARMING_TIME_THRESHOLD", Number),
+    FARMING_RATIO_THRESHOLD: parseEnv("FARMING_RATIO_THRESHOLD", Number),
+    WINRATE_LOWER_THRESHOLD: parseEnv("WINRATE_LOWER_THRESHOLD", Number),
+    WINRATE_UPPER_THRESHOLD: parseEnv("WINRATE_UPPER_THRESHOLD", Number),
+    REALIZED_GAINS_THRESHOLD: parseEnv("REALIZED_GAINS_THRESHOLD", Number),
+    TOTAL_TOKENS_MIN: parseEnv("TOTAL_TOKENS_MIN", Number),
+    ROI_MIN_THRESHOLD: parseEnv("ROI_MIN_THRESHOLD", Number),
+    ROI_7D_NONZERO: parseEnv("ROI_7D_NONZERO", (value) => value === "true"),
+    UNREALIZED_MIN_PERCENT: parseEnv("UNREALIZED_MIN_PERCENT", Number),
+    UNREALIZED_MAX_PERCENT: parseEnv("UNREALIZED_MAX_PERCENT", Number),
+    UNREALIZED_TO_REALIZED_RATIO: parseEnv("UNREALIZED_TO_REALIZED_RATIO", Number),
   };
 };
 

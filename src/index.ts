@@ -1,5 +1,6 @@
 import { outflowListener } from "./outflow/outflowlistener";
 
+import { SolPriceFeed } from "./feed/solprice";
 export class MainClass {
   private listener: outflowListener;
 
